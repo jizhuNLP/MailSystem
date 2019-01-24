@@ -3,10 +3,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import team.nlp.MailSystem.function.checkMailaccount;
+import team.nlp.MailSystem.butevent.exitbutEvent;
+import team.nlp.MailSystem.butevent.loginbutEvent;
 import team.nlp.MailSystem.function.BasicInformation;
 import team.nlp.MailSystem.ui.MainPane;
-import team.nlp.MainSystem.butevent.exitbutEvent;
-import team.nlp.MainSystem.butevent.loginbutEvent;
 /***
  * 
  * @author jun

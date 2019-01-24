@@ -1,4 +1,4 @@
-package team.nlp.MainSystem.butevent;
+package team.nlp.MailSystem.butevent;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,11 +7,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JFrame;
+import javax.mail.*;
 
 import team.nlp.MailSystem.function.BasicInformation;
 import team.nlp.MailSystem.function.checkMailaccount;
 import team.nlp.MailSystem.ui.MainPane;
-
+import team.nlp.MailSystem.function.LinkHost;
 /***
  * 
  * @author jun
@@ -41,9 +42,19 @@ public class loginbutEvent implements ActionListener{
 		else
 		{
 			BasicInformation account=new BasicInformation();
-			account.setter(nameStr,pwStr);
-			new MainPane(account);
-			frame.dispose();
+			account.setter(nameStr,pwStr);//设置基础信息
+			Session sendsession=account.getSendSession();
+			Session recsession=account.getRecSession();
+			try
+			{
+				LinkHost linkhost=new LinkHost();
+				Transport transport=linkhost.SMTPlink(sendsession, nameStr, pwStr);//连接SMTP服务器
+				new MainPane(account);
+				frame.dispose();
+			}catch(Exception e2)
+			{
+				JOptionPane.showMessageDialog(frame, e2.getMessage());
+			}
 		}
 	}
 }

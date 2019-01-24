@@ -3,8 +3,9 @@ import java.awt.Color;
 
 import javax.mail.*;
 import javax.swing.*;
+
+import team.nlp.MailSystem.butevent.*;
 import team.nlp.MailSystem.function.BasicInformation;
-import team.nlp.MainSystem.butevent.*;
 
 /***
  * 
@@ -18,7 +19,7 @@ public class MainPane extends JFrame{
 	{
 		this.setSize(800, 480);
 		this.setLocation(600, 200);
-		//this.setUndecorated(true);
+		this.setUndecorated(true);
 		this.setLayout(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);

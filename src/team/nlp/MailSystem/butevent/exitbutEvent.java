@@ -1,4 +1,4 @@
-package team.nlp.MainSystem.butevent;
+package team.nlp.MailSystem.butevent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
