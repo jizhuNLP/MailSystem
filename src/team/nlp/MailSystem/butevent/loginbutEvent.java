@@ -12,7 +12,6 @@ import javax.mail.*;
 import team.nlp.MailSystem.function.BasicInformation;
 import team.nlp.MailSystem.function.checkMailaccount;
 import team.nlp.MailSystem.ui.MainPane;
-import team.nlp.MailSystem.function.LinkHost;
 /***
  * 
  * @author jun
@@ -45,7 +44,6 @@ public class loginbutEvent implements ActionListener{
 			{
 				BasicInformation account=new BasicInformation();
 				account.setter(nameStr,pwStr);//设置基础信息
-				Session sendsession=account.getSendSession();
 				new MainPane(account);
 				frame.dispose();
 			}catch(Exception e2)
