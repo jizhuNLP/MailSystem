@@ -29,8 +29,4 @@ public class LinkHost {
 			throw new Exception("Î´Öª´íÎó");
 		}
 	}
-	public void POP3link()throws Exception
-	{	
-		
-	}
 }

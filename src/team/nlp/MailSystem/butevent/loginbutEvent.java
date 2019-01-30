@@ -41,14 +41,11 @@ public class loginbutEvent implements ActionListener{
 			JOptionPane.showMessageDialog(frame, "密码为空!!");
 		else
 		{
-			BasicInformation account=new BasicInformation();
-			account.setter(nameStr,pwStr);//设置基础信息
-			Session sendsession=account.getSendSession();
-			Session recsession=account.getRecSession();
 			try
 			{
-				LinkHost linkhost=new LinkHost();
-				Transport transport=linkhost.SMTPlink(sendsession, nameStr, pwStr);//连接SMTP服务器
+				BasicInformation account=new BasicInformation();
+				account.setter(nameStr,pwStr);//设置基础信息
+				Session sendsession=account.getSendSession();
 				new MainPane(account);
 				frame.dispose();
 			}catch(Exception e2)
