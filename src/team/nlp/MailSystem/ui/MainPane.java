@@ -6,7 +6,6 @@ import javax.swing.*;
 
 import team.nlp.MailSystem.butevent.*;
 import team.nlp.MailSystem.function.BasicInformation;
-
 /***
  * 
  * @author jun
@@ -42,7 +41,7 @@ public class MainPane extends JFrame{
 		functional_zone.setBounds(220, 50, 540,330);
 		
 		//功能按钮事件添加
-		sendbut.addActionListener(null);
+		sendbut.addActionListener(new sendbutEvent(account,functional_zone));
 		inbox.addActionListener(null);
 		spambut.addActionListener(null);
 		draftsbut.addActionListener(null);
@@ -55,9 +54,5 @@ public class MainPane extends JFrame{
 		this.add(exitbut);
 		this.add(functional_zone);
 
-	}
-	public static void main(String[] args)
-	{
-		new MainPane(null);
 	}
 }
