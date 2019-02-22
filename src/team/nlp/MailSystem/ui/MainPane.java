@@ -43,7 +43,7 @@ public class MainPane extends JFrame{
 		//功能按钮事件添加
 		sendbut.addActionListener(new sendbutEvent(account,functional_zone));
 		inbox.addActionListener(null);
-		spambut.addActionListener(null);
+		spambut.addActionListener(new spambuttonEvent(functional_zone));
 		draftsbut.addActionListener(null);
 		exitbut.addActionListener(new exitbutEvent(frame));
 		
