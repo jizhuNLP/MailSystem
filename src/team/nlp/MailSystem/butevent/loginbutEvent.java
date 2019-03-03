@@ -44,6 +44,7 @@ public class loginbutEvent implements ActionListener{
 			{
 				BasicInformation account=new BasicInformation();
 				account.setter(nameStr,pwStr);//设置基础信息
+				
 				new MainPane(account);
 				frame.dispose();
 			}catch(Exception e2)
