@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import team.nlp.MailSystem.butevent.*;
 import team.nlp.MailSystem.function.BasicInformation;
+import team.nlp.MailSystem.function.obtainmail;
 /***
  * 
  * @author jun
@@ -42,8 +43,8 @@ public class MainPane extends JFrame{
 		
 		//功能按钮事件添加
 		sendbut.addActionListener(new sendbutEvent(account,functional_zone));
-		inbox.addActionListener(null);
-		spambut.addActionListener(new spambuttonEvent(functional_zone));
+		inbox.addActionListener(new spambuttonEvent(functional_zone, true));
+		spambut.addActionListener(new spambuttonEvent(functional_zone, false));
 		draftsbut.addActionListener(null);
 		exitbut.addActionListener(new exitbutEvent(frame));
 		

@@ -36,14 +36,15 @@ public class obtainmail {
 					Socket s = new Socket(ipv4,port);
 					in = s.getInputStream();
 					out = s.getOutputStream();
-					out.write(message[mailSize].getSubject().getBytes("UTF-8"));
+					String output = message[mailSize].getSubject();
+					out.write(output.getBytes("UTF-8"));
 					out.flush();
 					byte[] bytes = new byte[102400];
 					int n = in.read(bytes);
 					String str = new String(bytes, 0 , n,"utf-8");
-					if(str == "1") {
+					if(str.equals("1")) {
 						rabbMail.add(message[mailSize]);
-					} else if(str == "0") {
+					} else if(str.equals("0")) {
 						normMail.add(message[mailSize]);
 					} else {
 						rabbMail.add(message[mailSize]);
